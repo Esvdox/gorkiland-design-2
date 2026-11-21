@@ -1,0 +1,95 @@
+/* Both the photo and the brand artwork remain the originals. */
+body[data-header-study]{
+  --logo-w:174px;--head-h:94px;--edge:clamp(30px,4.6vw,78px);
+  --gap:clamp(16px,2.1vw,34px);--axis:calc(var(--logo-w)*.039);
+  --layout:"brand space enquiry menu" / auto 1fr auto auto;
+}
+body[data-header-study] :is(.site-header,.menu-top){
+  display:grid;grid-template:var(--layout);align-items:center;align-content:center;
+  justify-content:normal;column-gap:var(--gap);padding:0 var(--edge);
+  height:var(--head-h);width:100%;box-sizing:border-box;
+}
+body[data-header-study] .header-actions{display:contents}
+body[data-header-study] :is(.site-header,.menu-top) .brand{
+  grid-area:brand;width:var(--logo-w);padding:0;margin:0;justify-self:start;
+}
+body[data-header-study] :is(.site-header,.menu-top) .brand img{display:block;width:100%;height:auto}
+body[data-header-study] .site-header .header-enquiry{
+  grid-area:enquiry;justify-self:end;margin:0;padding:0;transform:translateY(var(--axis));line-height:1;
+}
+body[data-header-study] :is(.site-header .menu-toggle,.menu-close){
+  grid-area:menu;position:relative;inset:auto;justify-self:center;
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  width:auto;min-width:46px;height:46px;margin:0;padding:0 5px;border:0;clip-path:none;border-radius:0;
+  transform:translateY(var(--axis));color:inherit;background:transparent;
+  filter:none;text-shadow:inherit;-webkit-text-stroke:0;
+}
+body[data-header-study] :is(.menu-symbol,.menu-close > span:last-child){
+  width:20px;height:20px;inset:auto;flex-shrink:0;
+}
+body[data-header-study] .site-header :is(.menu-toggle,.brand img){filter:drop-shadow(0 1px 1px #152237a1)}
+body[data-header-study] .site-header .menu-toggle:hover{background:transparent;color:white}
+body[data-header-study] :is(.menu-symbol,.menu-close > span:last-child)::before,
+body[data-header-study] :is(.menu-symbol,.menu-close > span:last-child)::after{height:2.4px}
+body[data-header-study] :is(.menu-toggle,.menu-close):focus-visible{outline-offset:1px}
+body[data-header-study] .ride-icon{width:46px;height:38px;flex:none}
+body[data-header-study] .menu-toggle:has(.ride-icon) .menu-symbol{display:none}
+body[data-header-study] .site-header .menu-toggle:has(.ride-icon) .menu-text,
+body[data-header-study="hub"] .site-header .menu-text,
+body[data-header-study="word"] .site-header .menu-text{display:block;font-size:15px;font-weight:600;line-height:1}
+body[data-header-study="level"] :is(.menu-toggle,.menu-close)::after{
+  content:"";position:absolute;right:-6px;bottom:1px;width:69px;height:13px;
+  border:solid #fff;border-width:0 0 2px 2px;border-bottom-left-radius:32px 17px;
+  transform:skewX(28deg);box-shadow:0 3px 0 #e7441a;pointer-events:none
+}
+body[data-header-study="level"] .menu-close::after{border-color:#1f1f1f}
+body[data-header-study="stratosphere"]{--logo-w:184px}
+body[data-header-study="stratosphere"] .menu-toggle{flex-direction:row-reverse}
+body[data-header-study="coaster"]{--layout:"brand line enquiry menu" / auto minmax(14px,1fr) auto auto}
+body[data-header-study="coaster"] :is(.site-header,.menu-top)::before{
+  content:"";grid-area:line;border-top:1px solid currentColor;opacity:.55;transform:translateY(var(--axis))
+}
+body[data-header-study="coaster"] .ride-icon{width:56px;height:43px}
+body[data-header-study="wheel"]{--layout:"menu brand enquiry" / 1fr auto 1fr}
+body[data-header-study="wheel"] :is(.site-header .menu-toggle,.menu-close){justify-self:start;flex-direction:row-reverse}
+body[data-header-study="lock"]{--layout:"brand menu space enquiry" / auto auto 1fr auto;--gap:16px}
+body[data-header-study="lock"] :is(.site-header .menu-toggle,.menu-close)::before{
+  content:"";position:absolute;left:0;height:23px;border-left:1px solid currentColor;opacity:.65
+}
+body[data-header-study="lock"] .menu-symbol::after{background:#e7441a}
+body[data-header-study="hub"]{--layout:"brand menu enquiry" / 1fr auto 1fr}
+body[data-header-study="hub"] .menu-symbol{width:16px;height:16px;color:#ff714b}
+body[data-header-study="ship"] :is(.site-header .menu-toggle,.menu-close){
+  padding-inline:13px;border-inline:1px solid #ffffff70;
+}
+body[data-header-study="signature"]{--layout:"left brand menu right" / 1fr auto auto 1fr;--gap:14px}
+body[data-header-study="signature"] .site-header .header-enquiry{grid-area:right}
+body[data-header-study="signature"] :is(.site-header,.menu-top)::after{
+  content:"";grid-column:brand-start/menu-end;grid-row:1;align-self:end;transform:translateY(9px);
+  height:2px;background:linear-gradient(to right,white 0 74%,#e7441a 74%);pointer-events:none
+}
+body[data-header-study="word"] .site-header .menu-toggle .menu-text{
+  font-size:clamp(20px,2.1vw,31px);font-weight:600;letter-spacing:-.055em;line-height:1;
+}
+body[data-header-study="word"] .menu-symbol{width:14px;height:14px}
+body[data-header-study="word"] .menu-symbol::after{background:#ff7048}
+body[data-header-study="bumper"]{--layout:"menu enquiry space brand" / auto auto 1fr auto}
+body[data-header-study="bumper"] .site-header .menu-toggle{flex-direction:row-reverse}
+@media(max-width:760px){
+  body[data-header-study]{--logo-w:122px;--head-h:72px;--edge:16px;--gap:9px}
+  body[data-header-study] .site-header .header-enquiry{display:none}
+  body[data-header-study="stratosphere"]{--logo-w:135px}
+  body[data-header-study="hub"]{--logo-w:100px;--edge:11px;--gap:4px}
+  body[data-header-study="hub"] .site-header .header-enquiry{display:inline-flex;font-size:12px}
+  body[data-header-study="wheel"]{--layout:"menu brand space" / 1fr auto 1fr;--logo-w:116px;--edge:10px;--gap:4px}
+  body[data-header-study="wheel"] .site-header .menu-toggle{gap:4px}
+  body[data-header-study="wheel"] .site-header .menu-text{font-size:11px}
+  body[data-header-study="wheel"] .ride-icon{width:35px}
+  body[data-header-study="coaster"]{--layout:"brand line menu" / auto minmax(8px,1fr) auto}
+  body[data-header-study="coaster"] .ride-icon{width:48px}
+  body[data-header-study="word"] .site-header .menu-toggle .menu-text{font-size:22px}
+}
+@media(prefers-contrast:more){body[data-header-study] .site-header .menu-toggle{filter:drop-shadow(0 1px 2px black)}}
+
+@media(max-width:360px){body[data-header-study="wheel"] .site-header .menu-toggle{padding:0;gap:2px}body[data-header-study="wheel"] .ride-icon{width:30px}}
+body[data-header-study] .header-actions{text-shadow:0 1px 2px #15223780;-webkit-text-stroke:0}
