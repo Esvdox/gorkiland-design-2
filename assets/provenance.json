@@ -105,14 +105,70 @@
     "file": "photo-20.webp"
   },
   {
-    "file": "swing-film.mp4",
-    "url": "https://rutube.ru/video/2a23cd6a45c90ac4fc467ab4b82c7cc9/",
-    "alt": "Качели 360, парк Орион ВДНХ (Москва), официальный канал ГоркиLAND"
+    "file": "rides-film.mp4",
+    "sources": [
+      {
+        "url": "https://rutube.ru/video/2a23cd6a45c90ac4fc467ab4b82c7cc9/",
+        "subject": "Качели 360, парк Орион ВДНХ (Москва), официальный канал ГоркиLAND"
+      },
+      {
+        "page": "https://parkskazka.com/attractions/ekstremalnye/formula/",
+        "url": "https://vkvideo.ru/video-128254183_456240548",
+        "subject": "Парк «Сказка», катальная гора «Формула»",
+        "source_seconds": [
+          [
+            4.08,
+            5.36
+          ],
+          [
+            10.56,
+            11.92
+          ],
+          [
+            43.08,
+            43.6
+          ],
+          [
+            2.0,
+            2.72
+          ]
+        ],
+        "treatment": "Трасса тонирована в фирменный оранжевый #E7441A с сохранением светотени."
+      }
+    ]
   },
   {
-    "file": "swing-mobile.mp4",
-    "url": "https://rutube.ru/video/2a23cd6a45c90ac4fc467ab4b82c7cc9/",
-    "alt": "Качели 360, парк Орион ВДНХ (Москва), официальный канал ГоркиLAND"
+    "file": "rides-mobile.mp4",
+    "sources": [
+      {
+        "url": "https://rutube.ru/video/2a23cd6a45c90ac4fc467ab4b82c7cc9/",
+        "subject": "Качели 360, парк Орион ВДНХ (Москва), официальный канал ГоркиLAND"
+      },
+      {
+        "page": "https://parkskazka.com/attractions/ekstremalnye/formula/",
+        "url": "https://vkvideo.ru/video-128254183_456240548",
+        "subject": "Парк «Сказка», катальная гора «Формула»",
+        "source_seconds": [
+          [
+            4.08,
+            5.36
+          ],
+          [
+            10.56,
+            11.92
+          ],
+          [
+            43.08,
+            43.6
+          ],
+          [
+            2.0,
+            2.72
+          ]
+        ],
+        "treatment": "Трасса тонирована в фирменный оранжевый #E7441A с сохранением светотени."
+      }
+    ]
   },
   {
     "file": "swing-poster.webp",
