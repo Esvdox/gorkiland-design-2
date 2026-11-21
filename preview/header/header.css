@@ -119,14 +119,76 @@ body[data-header-study="swing360"] .swing-arm {
 }
 
 /* The lettering occupies rows 90 through 153 of the 650 × 194 identity artwork. */
-body[data-header-study="swing360"] .wordmark {
+body:is([data-header-study="swing360"],.menu-sign-study) .wordmark {
   position:relative; display:block; width:100%; aspect-ratio:650 / 64; overflow:hidden;
 }
-body[data-header-study="swing360"] :is(.site-header,.menu-top) .wordmark img {
+body:is([data-header-study="swing360"],.menu-sign-study) :is(.site-header,.menu-top) .wordmark img {
   position:absolute; left:0; top:-140.625%; width:100%; height:auto;
   filter:brightness(0) invert(1);
 }
-body[data-header-study="swing360"] .menu-top .wordmark img {filter:brightness(0)}
-body[data-header-study="swing360"] :is(.site-header,.menu-top) .brand {
+body:is([data-header-study="swing360"],.menu-sign-study) .menu-top .wordmark img {filter:brightness(0)}
+body:is([data-header-study="swing360"],.menu-sign-study) :is(.site-header,.menu-top) .brand {
   display:flex; min-height:44px; align-items:center;
 }
+/* In these compositions the lettering and the glyph share one optical centre. */
+body.menu-sign-study {
+  --logo-w:190px; --axis:0px; --head-h:78px;
+  --sign-height:calc(var(--head-h) / 2 + 22px); --sign-width:62px;
+  --sign-right:var(--edge); --sign-color:white;
+}
+body.menu-sign-study :is(.site-header .menu-toggle,.menu-close) {
+  grid-area:auto;position:absolute;inset:0 var(--sign-right) auto auto;
+  width:var(--sign-width);height:var(--sign-height);padding:0;transform:none;
+  display:grid;place-items:center;color:var(--sign-color);filter:none;
+  background:transparent;border:0;border-radius:0;isolation:isolate;
+}
+body.menu-sign-study .site-header .menu-toggle:hover{background:transparent;color:var(--sign-color)}
+body.menu-sign-study .site-header :is(.menu-text,.menu-symbol){display:none}
+body.menu-sign-study .brand-glyph,body.menu-sign-study .menu-close > span:last-child {
+  position:absolute;top:calc(var(--head-h) / 2);left:50%;
+  width:26px;height:26px;transform:translate(-50%,-50%);z-index:1;
+}
+body.menu-sign-study .menu-close > span:last-child {transform:translate(-50%,-50%) rotate(45deg)}
+body.menu-sign-study .menu-close > span:last-child::before,body.menu-sign-study .menu-close > span:last-child::after{height:4px}
+body.menu-sign-study :is(.menu-toggle,.menu-close)::before,body.menu-sign-study :is(.menu-toggle,.menu-close)::after{pointer-events:none}
+body.menu-sign-study .site-header .header-enquiry{margin-right:calc(var(--sign-width) + 12px)}
+body.menu-sign-study .menu-close {--sign-color:#1f1f1f}
+body.menu-sign-study :is(.site-header .menu-toggle,.menu-close):focus-visible{outline:2px solid #e7441a;outline-offset:-2px}
+
+body[data-header-study="sign-center"] {--sign-right:calc(50% - var(--sign-width) / 2)}
+body[data-header-study="sign-center"] :is(.menu-toggle,.menu-close)::before {
+  position:absolute;content:"";top:0;left:calc(50% - 1px);height:calc(var(--head-h)/2 - 18px);
+  width:7px;transform:skewX(-22deg);border-left:2px solid currentColor;border-right:2px solid currentColor;
+}
+body[data-header-study="sign-center"] .site-header .header-enquiry {margin-right:0}
+body[data-header-study="sign-tab"] {--sign-width:54px;--sign-color:#191919}
+body[data-header-study="sign-tab"] :is(.menu-toggle,.menu-close)::before {
+  content:"";position:absolute;inset:0 0 1px;background:#e7441a;clip-path:polygon(0 0,100% 0,100% 76%,78% 100%,0 100%);
+}
+body[data-header-study="sign-drop"] {--sign-width:48px}
+body[data-header-study="sign-drop"] :is(.menu-toggle,.menu-close)::before {
+  content:"";position:absolute;top:0;left:50%;width:8px;height:calc(var(--head-h) / 2 - 9px);
+  background:currentColor;transform:skewX(-24deg);transform-origin:bottom;
+}
+body[data-header-study="sign-drop"] .brand-glyph{width:33px;height:33px}
+body[data-header-study="sign-side"] {--sign-width:72px;--sign-right:0px;--sign-color:#1f1f1f}
+body[data-header-study="sign-side"] :is(.site-header .menu-toggle,.menu-close){
+  top:calc(var(--head-h)/2 - 22px);height:44px;
+}
+body[data-header-study="sign-side"] :is(.menu-toggle,.menu-close)::before{
+  position:absolute;content:"";inset:4px 0;background:#fff;clip-path:polygon(15px 0,100% 0,100% 100%,0 100%);
+}
+body[data-header-study="sign-side"] :is(.brand-glyph,.menu-close > span:last-child){top:50%}
+body[data-header-study="sign-corner"] {--sign-width:124px;--sign-right:0px;--sign-color:#1f1f1f}
+body[data-header-study="sign-corner"] :is(.menu-toggle,.menu-close)::before {
+  content:"";position:absolute;inset:0 0 2px;background:#fff;clip-path:polygon(0 0,100% 0,100% 100%,34% 100%);
+}
+body[data-header-study="sign-corner"] :is(.brand-glyph,.menu-close > span:last-child){left:63%}
+@media(max-width:760px){
+  body.menu-sign-study{--logo-w:148px;--head-h:66px}
+  body[data-header-study="sign-center"]{--logo-w:clamp(110px,32vw,148px);--sign-width:48px}
+  body[data-header-study="sign-tab"]{--sign-width:45px}
+  body[data-header-study="sign-side"]{--sign-width:55px}
+  body[data-header-study="sign-corner"]{--sign-width:95px}
+}
+
