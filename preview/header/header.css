@@ -93,3 +93,40 @@ body[data-header-study="bumper"] .site-header .menu-toggle{flex-direction:row-re
 
 @media(max-width:360px){body[data-header-study="wheel"] .site-header .menu-toggle{padding:0;gap:2px}body[data-header-study="wheel"] .ride-icon{width:30px}}
 body[data-header-study] .header-actions{text-shadow:0 1px 2px #15223780;-webkit-text-stroke:0}
+
+body[data-header-study="swing360"] {
+  --logo-w: 190px;
+  --axis: 0px;
+}
+body[data-header-study="swing360"] .site-header .menu-toggle {
+  gap: 8px;
+  flex-direction: row-reverse;
+}
+body[data-header-study="swing360"] .ride-icon {
+  width: 55px;
+  height: 46px;
+}
+body[data-header-study="swing360"] .swing-arm {
+  transform-origin: 20.9px 20.8px;
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  body[data-header-study="swing360"] .swing-arm { transition: transform 280ms ease-out; }
+  body[data-header-study="swing360"] .menu-toggle:hover .swing-arm { transform: rotate(-12deg); }
+}
+@media (max-width:760px) {
+  body[data-header-study="swing360"] { --logo-w: 148px; }
+  body[data-header-study="swing360"] .ride-icon { width: 47px; height: 40px; }
+}
+
+/* The lettering occupies rows 90 through 153 of the 650 × 194 identity artwork. */
+body[data-header-study="swing360"] .wordmark {
+  position:relative; display:block; width:100%; aspect-ratio:650 / 64; overflow:hidden;
+}
+body[data-header-study="swing360"] :is(.site-header,.menu-top) .wordmark img {
+  position:absolute; left:0; top:-140.625%; width:100%; height:auto;
+  filter:brightness(0) invert(1);
+}
+body[data-header-study="swing360"] .menu-top .wordmark img {filter:brightness(0)}
+body[data-header-study="swing360"] :is(.site-header,.menu-top) .brand {
+  display:flex; min-height:44px; align-items:center;
+}
