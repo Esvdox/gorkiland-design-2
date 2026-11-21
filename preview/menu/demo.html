@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,follow"><title>Пример кнопки меню · ГоркиLand</title>
+<style>*{box-sizing:border-box}html,body,iframe{width:100%;height:100%;margin:0;border:0;display:block}body{background:#fff}iframe{visibility:hidden}</style></head><body>
+<iframe title="Сайт ГоркиLand с выбранной кнопкой меню" allow="autoplay"></iframe>
+<script>
+const variants={arc:'Вираж',ring:'Кольцо',pill:'Меню с подписью',flag:'Закладка',corner:'Срез'};
+const requested=new URLSearchParams(location.search).get('v');
+const variant=Object.hasOwn(variants,requested)?requested:'arc';
+document.title=variants[variant]+' · ГоркиLand';
+const frame=document.querySelector('iframe');
+frame.addEventListener('load',()=>{
+  const page=frame.contentDocument;
+  if(!page || !page.body.classList.contains('is-home')){ frame.style.visibility='visible'; return; }
+  page.body.dataset.menuStudy=variant;
+  const sheet=page.createElement('link');
+  sheet.rel='stylesheet'; sheet.href=new URL('variants.css',location.href);
+  sheet.onload=sheet.onerror=()=>{frame.style.visibility='visible'};
+  page.head.append(sheet);
+});
+frame.src='../../';
+</script></body></html>
