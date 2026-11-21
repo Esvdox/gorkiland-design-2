@@ -1,0 +1,14 @@
+/* LAND begins after transparent column 372 in the 650px master artwork.
+   The lettering occupies rows 90–153 of the original 194px-high logo. */
+.menu-sign-study .wordmark img, .mark img {
+  clip-path: inset(0 42.76923% 0 0);
+}
+.menu-sign-study .wordmark::after, .mark::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: #e7441a;
+  clip-path: inset(0 0 0 57.23077%);
+  mask: url("../../assets/logo-reverse.png") left 69.23077% / 100% 303.125% no-repeat;
+}

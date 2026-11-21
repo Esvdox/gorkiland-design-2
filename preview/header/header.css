@@ -1,3 +1,4 @@
+@import url("./land.css");
 /* Both the photo and the brand artwork remain the originals. */
 body[data-header-study]{
   --logo-w:174px;--head-h:94px;--edge:clamp(30px,4.6vw,78px);
