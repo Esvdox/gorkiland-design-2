@@ -193,3 +193,31 @@ body[data-header-study="sign-corner"] :is(.brand-glyph,.menu-close > span:last-c
   body[data-header-study="sign-corner"]{--sign-width:95px}
 }
 
+/* The top of each rounded tab meets the canvas edge. */
+body.trapezoid-study {
+  --sign-width:114px; --sign-height:58px; --head-h:60px;
+  --sign-color:#202020; --glyph-x:50%; --glyph-size:25px;
+  --sign-right:clamp(18px,3.8vw,72px);
+}
+body.trapezoid-study .trapezoid {
+  position:absolute; inset:0; width:100%; height:100%; pointer-events:none;
+}
+body.trapezoid-study :is(.brand-glyph,.menu-close > span:last-child) {
+  left:var(--glyph-x);width:var(--glyph-size);height:var(--glyph-size);
+}
+body.trapezoid-study .menu-close{--sign-color:#202020}
+body[data-header-study="trap-wide"] {--sign-width:145px;--sign-height:49px;--head-h:50px}
+body[data-header-study="trap-tab"] {--sign-width:76px;--sign-height:70px;--head-h:68px}
+body[data-header-study="trap-line"] {--sign-color:#fff;--sign-width:111px;--sign-height:56px;--head-h:56px}
+body[data-header-study="trap-offset"] {--sign-width:136px;--sign-height:62px;--sign-color:#e7441a;--glyph-x:59%;--head-h:60px}
+body[data-header-study="trap-rim"] {--sign-width:106px;--sign-height:64px;--sign-color:#fff;--head-h:59px}
+body[data-header-study="trap-rim"] .menu-close {--sign-color:#fff}
+@media(max-width:760px){
+  body.trapezoid-study{--sign-right:14px;--glyph-size:23px}
+  body[data-header-study="trap-wide"]{--sign-width:105px;--sign-height:45px;--head-h:46px}
+  body[data-header-study="trap-tab"]{--sign-width:59px;--sign-height:60px;--head-h:58px}
+  body[data-header-study="trap-line"]{--sign-width:83px;--sign-height:49px;--head-h:50px}
+  body[data-header-study="trap-offset"]{--sign-width:104px;--sign-height:53px;--head-h:52px}
+  body[data-header-study="trap-rim"]{--sign-width:84px;--sign-height:56px;--head-h:52px}
+}
+
